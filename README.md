@@ -12,7 +12,7 @@ https://wedding-templete.netlify.app/
 - 결혼식 날짜, 위치, 인사말 출력
 - 사진첩
 - 축의금을 보내실 곳 (계좌번호 클립보드 복사 기능 지원)
-- 카카오톡 공유 기능 및 링크 공유 기능
+- 카카오톡 공유 기능 및 링크 공유 기능 -> 안되서 확인중입니다.
 
 ## 🚘 시작하기
 
@@ -20,7 +20,7 @@ https://wedding-templete.netlify.app/
 2. `$ npm install` - 디펜던시 설치
 3. `$ npm start` - 로컬로 실행
 
-## 🔧 Netlify로 만들기
+## 🔧 Netlify로 만들기 => 잘 모르겠네요 사용안했습니다.
 
 Netlify로 만드신다면 아래 글을 참고하세요 🕵🏻‍♂️
 
