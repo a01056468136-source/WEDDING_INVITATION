@@ -57,41 +57,40 @@ const LinkShareButton = styled(Button)`
   }
 `;
 const Share = () => {
-  const createKakaoButton = () => {
-    // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
-    if (window.Kakao) {
-      const kakao = window.Kakao;
+const createKakaoButton = () => {
+  if (!window.Kakao || !window.Kakao.Share) {
+    console.log("Kakao SDK not loaded");
+    return;
+  }
 
-      // 중복 initialization 방지
-      if (!kakao.isInitialized()) {
-        // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
-        kakao.init(KAKAOTALK_API_TOKEN);
-      }
+  const kakao = window.Kakao;
 
-      kakao.Share.sendDefault({
-        objectType: "feed",
-        content: {
-          title: `${GROOM_NAME}❤${BRIDE_NAME} 결혼식에 초대합니다`,
-          description: "아래의 '청첩장 열기' 버튼을 눌러 읽어주세요🤵👰",
-          imageUrl: KAKAOTALK_SHARE_IMAGE,
-          link: {
-            mobileWebUrl: window.location.href,
-            webUrl: window.location.href,
-          },
+  if (!kakao.isInitialized()) {
+    kakao.init(KAKAOTALK_API_TOKEN);
+  }
+
+  kakao.Share.sendDefault({
+    objectType: "feed",
+    content: {
+      title: `${GROOM_NAME}❤${BRIDE_NAME} 결혼식에 초대합니다`,
+      description: "아래의 '청첩장 열기' 버튼을 눌러 읽어주세요🤵👰",
+      imageUrl: KAKAOTALK_SHARE_IMAGE,
+      link: {
+        mobileWebUrl: WEDDING_INVITATION_URL,
+        webUrl: WEDDING_INVITATION_URL,
+      },
+    },
+    buttons: [
+      {
+        title: "청첩장 열기",
+        link: {
+          mobileWebUrl: WEDDING_INVITATION_URL,
+          webUrl: WEDDING_INVITATION_URL,
         },
-        buttons: [
-          {
-            title: "청첩장 열기",
-            link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
-            },
-          },
-        ],
-        installTalk: true,
-      });
-    }
-  };
+      },
+    ],
+  });
+};
 
   return (
     <Wrapper>
