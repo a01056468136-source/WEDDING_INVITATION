@@ -76,24 +76,16 @@ const Share = () => {
           description: "아래의 '청첩장 열기' 버튼을 눌러 읽어주세요🤵👰",
           imageUrl: KAKAOTALK_SHARE_IMAGE,
           link: {
-            //mobileWebUrl: window.location.href,
-            //webUrl: window.location.href,
-            //mobileWebUrl: WEDDING_INVITATION_URL,
-            //webUrl: WEDDING_INVITATION_URL,
-            webUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
-            mobileWebUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
+            mobileWebUrl: window.location.href,
+            webUrl: window.location.href,
           },
         },
         buttons: [
           {
             title: "청첩장 열기",
             link: {
-              //mobileWebUrl: window.location.href,
-              //webUrl: window.location.href,
-              //mobileWebUrl: WEDDING_INVITATION_URL,
-              //webUrl: WEDDING_INVITATION_URL,
-              webUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
-             mobileWebUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href,
             },
           },
         ],
