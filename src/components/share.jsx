@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Button, Divider, message } from "antd";
 import { MessageFilled, LinkOutlined } from "@ant-design/icons";
@@ -23,7 +23,6 @@ const Title = styled.span`
   color: var(--title-color);
   font-weight: bold;
   opacity: 0.85;
-  margin-bottom: 0;
 `;
 
 const KakaoTalkShareButton = styled(Button)`
@@ -31,91 +30,78 @@ const KakaoTalkShareButton = styled(Button)`
   border-color: #fee500;
   color: #181600;
   width: 100%;
-  &:hover {
-    background-color: #fcf07e !important;
-    border-color: #fcf07e !important;
-    color: #17160b !important;
-  }
-  &:focus {
-    background-color: #fcf07e !important;
-    border-color: #fcf07e !important;
-    color: #17160b !important;
-  }
 `;
 
 const LinkShareButton = styled(Button)`
   background-color: rgba(217, 125, 131, 0.2);
   border-color: rgba(217, 125, 131, 0.2) !important;
   color: var(--title-color) !important;
-  font-weight: 400 !important;
-  align-item: center;
   width: 100%;
-  &:hover {
-    background-color: rgb(217 125 131 / 48%) !important;
-    border-color: rgb(217 125 131 / 48%) !important;
-    color: var(--title-color) !important;
-  }
 `;
+
 const Share = () => {
-const createKakaoButton = () => {
-  if (!window.Kakao || !window.Kakao.Share) {
-    console.log("Kakao SDK not loaded");
-    return;
-  }
+  // ✅ 카카오 초기화 (딱 1번)
+  useEffect(() => {
+    if (window.Kakao && !window.Kakao.isInitialized()) {
+      window.Kakao.init(KAKAOTALK_API_TOKEN);
+      console.log("Kakao init 완료");
+    }
+  }, []);
 
-  const kakao = window.Kakao;
+  // ✅ 카카오 공유
+  const sendKakao = () => {
+    console.log("clicked");
 
-  if (!kakao.isInitialized()) {
-    kakao.init(KAKAOTALK_API_TOKEN);
-  }
+    if (!window.Kakao || !window.Kakao.Share) {
+      console.log("Kakao SDK 없음");
+      message.error("카카오 SDK 로드 실패");
+      return;
+    }
 
-  kakao.Share.sendDefault({
-    objectType: "feed",
-    content: {
-      title: `${GROOM_NAME}❤${BRIDE_NAME} 결혼식에 초대합니다`,
-      description: "아래의 '청첩장 열기' 버튼을 눌러 읽어주세요🤵👰",
-      imageUrl: KAKAOTALK_SHARE_IMAGE,
-      link: {
-        mobileWebUrl: WEDDING_INVITATION_URL,
-        webUrl: WEDDING_INVITATION_URL,
-      },
-    },
-    buttons: [
-      {
-        title: "청첩장 열기",
+    window.Kakao.Share.sendDefault({
+      objectType: "feed",
+      content: {
+        title: `${GROOM_NAME} ❤ ${BRIDE_NAME} 결혼식에 초대합니다`,
+        description: "청첩장을 확인해주세요 💌",
+        imageUrl: KAKAOTALK_SHARE_IMAGE,
         link: {
           mobileWebUrl: WEDDING_INVITATION_URL,
           webUrl: WEDDING_INVITATION_URL,
         },
       },
-    ],
-  });
-};
+      buttons: [
+        {
+          title: "청첩장 열기",
+          link: {
+            mobileWebUrl: WEDDING_INVITATION_URL,
+            webUrl: WEDDING_INVITATION_URL,
+          },
+        },
+      ],
+    });
+  };
 
   return (
     <Wrapper>
-      <Divider
-        data-aos="fade-up"
-        plain
-        style={{ marginTop: 0, marginBottom: 32 }}
-      >
+      <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
         <Title>청첩장 공유하기</Title>
       </Divider>
+
+      {/* 카카오 공유 */}
       <KakaoTalkShareButton
-        style={{ margin: 0 }}
         icon={<MessageFilled />}
-        id="sendKakao"
         size="large"
-        onClick={createKakaoButton}
+        onClick={sendKakao}
       >
         카카오톡으로 공유하기
       </KakaoTalkShareButton>
+
+      {/* 링크 복사 */}
       <CopyToClipboard text={WEDDING_INVITATION_URL}>
         <LinkShareButton
-          style={{ margin: 0 }}
           icon={<LinkOutlined />}
           size="large"
-          onClick={() => message.success("청첩장 링크가 복사되었습니다.")}
+          onClick={() => message.success("링크 복사 완료")}
         >
           링크로 공유하기
         </LinkShareButton>
