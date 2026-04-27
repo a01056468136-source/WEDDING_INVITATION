@@ -47,8 +47,8 @@ const Location = () => {
   const executeScript = () => {
     const scriptTag = document.createElement("script");
     const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-    "timestamp" : "1652464367301",
-    "key" : "2a8fe",
+   "timestamp" : "1777268766409",
+		"key" : "mshpzt2ifgi",
     "mapWidth" : "640",
     "mapHeight" : "360"
   }).render();`);
@@ -103,9 +103,9 @@ const Location = () => {
         className="root_daum_roughmap root_daum_roughmap_landing"
       ></Map>
       <Content>
-        대구 수성구 두산동 888-2번지
+        서울 영등포구 여의대방로 259
         <br />
-        호텔수성 수성스퀘어 3층 피오니홀
+        공군호텔 웨딩홀 1층 컨벤션 홀
         <br />
         <br />
         <Title>버스 이용시</Title>
@@ -119,7 +119,7 @@ const Location = () => {
         <Title>지하철 이용시</Title>
         <br />
         <br />
-        3호선 수성못역 하차 (도보 10분)
+        1호선 대방역 하차 (도보 7분)
       </Content>
     </Wrapper>
   );
