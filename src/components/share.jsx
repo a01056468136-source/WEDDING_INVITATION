@@ -57,6 +57,7 @@ const LinkShareButton = styled(Button)`
   }
 `;
 const Share = () => {
+  const currentUrl = typeof window !== "undefined" ? window.location.href : WEDDING_INVITATION_URL;
   const createKakaoButton = () => {
     // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
     if (window.Kakao) {
@@ -67,9 +68,7 @@ const Share = () => {
         // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
         kakao.init(KAKAOTALK_API_TOKEN);
       }
-
-      const currentUrl = typeof window !== "undefined" ? window.location.href : WEDDING_INVITATION_URL;
-      
+  
       kakao.Link.sendDefault({
         objectType: "feed",
         content: {
@@ -104,7 +103,7 @@ const Share = () => {
       >
         카카오톡으로 공유하기
       </KakaoTalkShareButton>
-      <CopyToClipboard text={window.location.href}>
+      <CopyToClipboard text={currentUrl}>
         <LinkShareButton
           style={{ margin: 0 }}
           icon={<LinkOutlined />}
