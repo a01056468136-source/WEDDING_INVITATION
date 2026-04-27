@@ -52,11 +52,11 @@ const Share = () => {
   const sendKakao = () => {
     console.log("clicked");
 
-    if (!window.Kakao || !window.Kakao.Share) {
-      console.log("Kakao SDK 없음");
-      message.error("카카오 SDK 로드 실패");
-      return;
-    }
+  if (!window.Kakao || !window.Kakao.Link) {
+    console.log("Kakao Link 없음");
+    message.error("카카오 SDK 로드 실패");
+    return;
+  }
 
     window.Kakao.Link.sendDefault({
       objectType: "feed",
