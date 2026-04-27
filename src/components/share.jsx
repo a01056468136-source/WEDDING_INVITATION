@@ -78,8 +78,10 @@ const Share = () => {
           link: {
             //mobileWebUrl: window.location.href,
             //webUrl: window.location.href,
-             mobileWebUrl: WEDDING_INVITATION_URL,
-             webUrl: WEDDING_INVITATION_URL,
+            //mobileWebUrl: WEDDING_INVITATION_URL,
+            //webUrl: WEDDING_INVITATION_URL,
+            webUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
+            mobileWebUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
           },
         },
         buttons: [
@@ -88,8 +90,10 @@ const Share = () => {
             link: {
               //mobileWebUrl: window.location.href,
               //webUrl: window.location.href,
-               mobileWebUrl: WEDDING_INVITATION_URL,
-               webUrl: WEDDING_INVITATION_URL,
+              //mobileWebUrl: WEDDING_INVITATION_URL,
+              //webUrl: WEDDING_INVITATION_URL,
+              webUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
+             mobileWebUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
             },
           },
         ],
