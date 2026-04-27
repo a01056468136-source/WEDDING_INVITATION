@@ -14,7 +14,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && touch public/.nojekyll && gh-pages -d public"
   },
   "dependencies": {
     "antd": "^4.20.4",
