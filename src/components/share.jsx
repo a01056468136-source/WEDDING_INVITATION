@@ -78,19 +78,19 @@ const Share = () => {
       objectType: "feed",
       content: {
         title: `${GROOM_NAME} ❤ ${BRIDE_NAME} 결혼식에 초대합니다`,
-        description: "청첩장을 확인해주세요 💌",
+        description: "26-12-12 오후2시 청첩장을 확인해주세요 💌",
         imageUrl: KAKAOTALK_SHARE_IMAGE,
         link: {
-          mobileWebUrl: WEDDING_INVITATION_URL,
-          webUrl: WEDDING_INVITATION_URL,
+          mobileWebUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
+          webUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
         },
       },
       buttons: [
         {
           title: "청첩장 열기",
           link: {
-            mobileWebUrl: WEDDING_INVITATION_URL,
-            webUrl: WEDDING_INVITATION_URL,
+            mobileWebUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
+            webUrl: "https://a01056468136-source.github.io/WEDDING_INVITATION/",
           },
         },
       ],
