@@ -47,8 +47,8 @@ const Location = () => {
   const executeScript = () => {
     const scriptTag = document.createElement("script");
     const inlineScript = document.createTextNode(`new daum.roughmap.Lander({
-   "timestamp" : "1777268766409",
-		"key" : "mshpzt2ifgi",
+    "timestamp" : "1777271865932",
+	"key" : "msjvqsppq9o",
     "mapWidth" : "640",
     "mapHeight" : "360"
   }).render();`);
@@ -99,7 +99,7 @@ const Location = () => {
       </Divider>
       <Image src={Flower} />
       <Map
-        id="daumRoughmapContainer1652464367301"
+        id="daumRoughmapContainer1777271865932"
         className="root_daum_roughmap root_daum_roughmap_landing"
       ></Map>
       <Content>
