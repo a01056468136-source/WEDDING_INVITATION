@@ -126,8 +126,16 @@ const Location = () => {
         <br />
         <br />
         출발 :
+		<br />
 		장소 :
+		<br /> 
 	    기사님 :
+		<br />
+		복귀 :
+		<Title>피로연 안내</Title>
+        <br />
+        <br /> 
+		2층 피로연 13:30 ~   
       </Content>
     </Wrapper>
   );
