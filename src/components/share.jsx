@@ -58,7 +58,7 @@ const Share = () => {
       return;
     }
 
-    window.Kakao.Share.sendDefault({
+    window.Kakao.Link.sendDefault({
       objectType: "feed",
       content: {
         title: `${GROOM_NAME} ❤ ${BRIDE_NAME} 결혼식에 초대합니다`,
