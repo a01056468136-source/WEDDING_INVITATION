@@ -12,7 +12,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
     />,
     <meta
       property="og:url"
-      content="https://a01056468136-source.github.io/WEDDING_INVITATION/"
+      content="https://a01056468136-source.github.io/WEDDING_INVITATION"
       key="og:url"
     />,
   ]);
