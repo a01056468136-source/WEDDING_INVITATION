@@ -1,4 +1,4 @@
-export const WEDDING_INVITATION_URL = "https://a01056468136-source.github.io/WEDDING_INVITATION";
+export const WEDDING_INVITATION_URL = "https://a01056468136-source.github.io/WEDDING_INVITATION/";
 export const KAKAOTALK_API_TOKEN = "0a6ece6f6c13c28546b3020024f9f55d";
 export const KAKAOTALK_SHARE_IMAGE =
   "https://raw.githubusercontent.com/a01056468136-source/WEDDING_INVITATION/refs/heads/main/src/assets/Gallery_Photo_7.webp";
