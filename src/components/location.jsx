@@ -132,6 +132,8 @@ const Location = () => {
 	    기사님 :
 		<br />
 		복귀 :
+		<br />
+		<br />   
 		<Title>피로연 안내</Title>
         <br />
         <br /> 
