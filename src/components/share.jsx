@@ -70,7 +70,6 @@ const Share = () => {
 
       kakao.Link.createDefaultButton({
         objectType: "feed",
-        container: "#sendKakao",
         content: {
           title: `${GROOM_NAME}❤${BRIDE_NAME} 결혼식에 초대합니다`,
           description: "아래의 '청첩장 열기' 버튼을 눌러 읽어주세요🤵👰",
@@ -91,11 +90,6 @@ const Share = () => {
         ],
         installTalk: true,
       });
-
-      setTimeout(() => {
-        document.getElementById("sendKakao")?.click();
-        message.success("카카오톡으로 청첩장을 공유합니다!");
-      }, 100);
     }
   };
 
