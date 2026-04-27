@@ -1,4 +1,4 @@
-export const WEDDING_INVITATION_URL = "http://localhost:8000/";
+export const WEDDING_INVITATION_URL = "https://a01056468136-source.github.io/WEDDING_INVITATION/";
 export const KAKAOTALK_API_TOKEN = "JavaScript 키 입력";
 export const KAKAOTALK_SHARE_IMAGE =
   "https://raw.githubusercontent.com/a01056468136-source/WEDDING_INVITATION/refs/heads/main/src/assets/Gallery_Photo_1.webp";
