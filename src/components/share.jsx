@@ -41,12 +41,28 @@ const LinkShareButton = styled(Button)`
 
 const Share = () => {
   // ✅ 카카오 초기화 (딱 1번)
-  useEffect(() => {
-    if (window.Kakao && !window.Kakao.isInitialized()) {
-      window.Kakao.init(KAKAOTALK_API_TOKEN);
-      console.log("Kakao init 완료");
-    }
-  }, []);
+ useEffect(() => {
+  const loadKakaoSDK = () => {
+    if (window.Kakao) return;
+
+    const script = document.createElement("script");
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    script.async = true;
+
+    script.onload = () => {
+      console.log("Kakao SDK loaded");
+
+      if (!window.Kakao.isInitialized()) {
+        window.Kakao.init(KAKAOTALK_API_TOKEN);
+        console.log("Kakao init 완료");
+      }
+    };
+
+    document.head.appendChild(script);
+  };
+
+  loadKakaoSDK();
+}, []);
 
   // ✅ 카카오 공유
   const sendKakao = () => {
