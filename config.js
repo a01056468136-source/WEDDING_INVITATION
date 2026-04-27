@@ -1,7 +1,7 @@
 export const WEDDING_INVITATION_URL = "http://localhost:8000/";
 export const KAKAOTALK_API_TOKEN = "JavaScript 키 입력";
 export const KAKAOTALK_SHARE_IMAGE =
-  "https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_960_720.jpg";
+  "https://raw.githubusercontent.com/a01056468136-source/WEDDING_INVITATION/refs/heads/main/src/assets/Gallery_Photo_1.webp";
 
 export const WEDDING_DATE = "2026년 12월 12일(토) 오후 2시";
 export const WEDDING_LOCATION = "공군호텔 웨딩홀, 1층 컨벤션홀";
