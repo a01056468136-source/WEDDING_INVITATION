@@ -68,23 +68,25 @@ const Share = () => {
         kakao.init(KAKAOTALK_API_TOKEN);
       }
 
-      kakao.Link.createDefaultButton({
+      const shareUrl = window.location.href;
+      
+      kakao.Link.sendDefault({
         objectType: "feed",
         content: {
           title: `${GROOM_NAME}❤${BRIDE_NAME} 결혼식에 초대합니다`,
           description: "아래의 '청첩장 열기' 버튼을 눌러 읽어주세요🤵👰",
           imageUrl: KAKAOTALK_SHARE_IMAGE,
           link: {
-            mobileWebUrl: window.location.href,
-            webUrl: window.location.href,
+            mobileWebUrl: shareUrl,
+            webUrl: shareUrl,
           },
         },
         buttons: [
           {
             title: "청첩장 열기",
             link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
+              mobileWebUrl: shareUrl,
+              webUrl: shareUrl,
             },
           },
         ],
@@ -111,7 +113,7 @@ const Share = () => {
       >
         카카오톡으로 공유하기
       </KakaoTalkShareButton>
-      <CopyToClipboard text={WEDDING_INVITATION_URL}>
+      <CopyToClipboard text={window.location.href}>
         <LinkShareButton
           style={{ margin: 0 }}
           icon={<LinkOutlined />}
